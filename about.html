@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idris Portfolio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#000;
+color:white;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:gold;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:16px;
+}
+
+nav ul li a:hover{
+color:gold;
+}
+
+.menu-icon{
+font-size:28px;
+display:none;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+
+background-image: url(images/ab.jpeg);
+background-size: cover;
+background-position:top;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+font-size:20px;
+margin:15px 0;
+}
+
+.btn{
+padding:12px 30px;
+background:gold;
+border:none;
+cursor:pointer;
+font-weight:bold;
+border-radius:5px;
+}
+
+/* RECENT DESIGNS */
+
+.recent{
+padding:60px 10%;
+background:#f5f5f5;
+text-align:center;
+}
+
+.recent h2{
+margin-bottom:40px;
+font-size:35px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:8px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* SUMMARY SECTION */
+
+.summary{
+padding:70px 10%;
+background:white;
+}
+
+.summary-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#fafafa;
+border-radius:10px;
+padding:30px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:10px;
+color:#333;
+}
+
+.card p{
+font-size:14px;
+color:#666;
+margin-bottom:20px;
+}
+
+.card button{
+padding:8px 20px;
+border:none;
+background:blueviolet;
+color:white;
+cursor:pointer;
+border-radius:4px;
+}
+
+.card button:hover{
+background:gold;
+color:black;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+padding:40px 10%;
+margin-top:40px;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.footer-logo{
+font-size:24px;
+color:gold;
+}
+
+footer p{
+margin-top:10px;
+color:#aaa;
+font-size:14px;
+}
+
+.footer-links a{
+display:block;
+color:#ccc;
+text-decoration:none;
+margin:8px 0;
+}
+
+.footer-links a:hover{
+color:gold;
+}
+
+.social-icons{
+margin-top:10px;
+}
+
+.social-icons a{
+margin-right:10px;
+font-size:20px;
+text-decoration:none;
+color:white;
+}
+
+.bottom{
+text-align:center;
+margin-top:30px;
+border-top:1px solid #444;
+padding-top:15px;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+display:none;
+position:absolute;
+top:70px;
+right:0;
+background:#000;
+width:200px;
+}
+
+nav ul{
+flex-direction:column;
+}
+
+nav ul li{
+margin:15px 0;
+text-align:center;
+}
+
+nav.active{
+display:block;
+}
+
+.menu-icon{
+display:block;
+}
+
+/* FLOATING CONTACT ICONS */
+
+.contact-icons{
+position:fixed;
+bottom:20px;
+right:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:1000;
+}
+
+.contact-icons a{
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+border-radius:50%;
+text-decoration:none;
+color:white;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.call{
+background:#007BFF;
+}
+
+.contact-icons a:hover{
+transform:scale(1.1);
+}
+/* ABOUT HERO */
+
+.about-hero{
+background-image: url(images/ab.jpeg);
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.about-hero h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+
+/* ABOUT INTRO */
+
+.about-intro{
+padding:60px 10%;
+background:#f5f5f5;
+}
+
+.about-container{
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.about-text h2{
+font-size:30px;
+margin-bottom:20px;
+}
+
+.about-text p{
+margin-bottom:15px;
+line-height:1.6;
+color:#555;
+}
+
+
+/* SKILLS */
+
+.skills{
+padding:70px 10%;
+text-align:center;
+}
+
+.skills-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.skill-card{
+background:#fafafa;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.skill-card h3{
+margin-bottom:10px;
+}
+
+
+/* EXPERIENCE */
+
+.experience{
+padding:60px 10%;
+background:greenyellow;
+text-align:center;
+}
+
+.experience h2{
+margin-bottom:20px;
+}
+
+.experience p{
+max-width:800px;
+margin:auto;
+margin-bottom:15px;
+line-height:1.6;
+color:#555;
+}
+
+
+/* ABOUT CONTACT */
+
+.about-contact{
+padding:70px 10%;
+text-align:center;
+}
+
+.about-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:black;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.about-btn:hover{
+background:gold;
+color:black;
+}
+
+
+
+}
+
+</style>
+</head>
+
+<body>
+
+    <header>
+
+<div class="logo">IDRIS  PORTFOLIO</div>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<!-- ABOUT HERO -->
+
+<section class="about-hero">
+
+<h1>About Me</h1>
+
+<p>Learn more about who I am and what I do</p>
+
+</section>
+
+
+<!-- ABOUT INTRO -->
+
+<section class="about-intro">
+
+<div class="about-container">
+
+<div class="about-text">
+
+<h2>Hello, I'm Idris</h2>
+
+<p>
+I am a passionate graphic designer and web developer who enjoys creating modern and visually appealing designs. 
+My goal is to help individuals and businesses communicate their ideas through creative graphics and well designed websites.
+</p>
+
+<p>
+I started my journey in design using tools like PixelLab and gradually expanded into web development using HTML and CSS. 
+I enjoy learning new technologies and improving my skills every day.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS SECTION -->
+
+<section class="skills">
+
+<h2>My Skills</h2>
+
+<div class="skills-container">
+
+<div class="skill-card">
+<h3>Graphic Design</h3>
+<p>Creating posters, social media designs, branding materials and visual graphics.</p>
+</div>
+
+<div class="skill-card">
+<h3>Web Design</h3>
+<p>Building responsive and modern websites using HTML and CSS.</p>
+</div>
+
+<div class="skill-card">
+<h3>Creative Thinking</h3>
+<p>Developing unique design ideas that communicate messages clearly.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience">
+
+<h2>My Journey</h2>
+
+<p>
+Over time I have worked on different creative projects including posters, promotional graphics and website layouts. 
+Each project has helped me improve my design thinking and technical skills.
+</p>
+
+<p>
+I continue learning new techniques in graphic design and web development so that I can provide better creative solutions for clients.
+</p>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+
+<section class="about-contact">
+
+<h2>Let's Work Together</h2>
+
+<p>If you are looking for creative designs or a modern website, feel free to reach out.</p>
+
+<a href="contact.html" class="about-btn">Contact Me</a>
+
+</section>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('active');
+}
+
+document.querySelectorAll('#menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('menu').classList.remove('active');
+  });
+});
+</script>
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<div class="footer-logo">Idris  Echesa</div>
+
+<p>Creative designer building modern visual experiences.</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Quick Links</h3>
+
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Portfolio</a>
+<a href="#">Contact</a>
+
+</div>
+
+<div>
+    <!-- Floating Contact Icons -->
+
+<div class="contact-icons">
+
+<a href="https://wa.me/254717303361" target="_blank" class="whatsapp">
+💬
+</a>
+
+<a href="tel:+254717303361" class="call">
+📞
+</a>
+
+</div>
+
+
+<h3>WhatsApp Us | Call Us</h3>
+
+<div class="social-icons">
+
+<a href="#">+254 717 303 361</a>
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom">
+
+© 2026 Idris Portfolio | All Rights Reserved
+
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+
+</body>
+</html>

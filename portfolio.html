@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:black;
+color:white;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:gold;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:16px;
+}
+
+nav ul li a:hover{
+color:gold;
+}
+
+.menu-icon{
+font-size:28px;
+display:none;
+cursor:pointer;
+}
+
+/* PAGE HERO */
+
+.portfolio-hero{
+background:#111;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.portfolio-hero h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+/* PORTFOLIO GALLERY */
+
+.portfolio{
+padding:70px 10%;
+background:#f5f5f5;
+}
+
+.portfolio-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.project{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.project:hover{
+transform:translateY(-10px);
+}
+
+.project img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.project-info{
+padding:20px;
+text-align:center;
+}
+
+.project-info h3{
+margin-bottom:10px;
+}
+
+.project-info p{
+font-size:14px;
+color:#555;
+margin-bottom:15px;
+}
+
+.project-info button{
+padding:8px 18px;
+border:none;
+background:black;
+color:white;
+cursor:pointer;
+border-radius:4px;
+}
+
+.project-info button:hover{
+background:gold;
+color:black;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+padding:40px 10%;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.footer-logo{
+font-size:24px;
+color:gold;
+}
+
+.footer-links a{
+display:block;
+color:#ccc;
+text-decoration:none;
+margin:8px 0;
+}
+
+.footer-links a:hover{
+color:gold;
+}
+
+.bottom{
+text-align:center;
+margin-top:30px;
+border-top:1px solid #444;
+padding-top:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+display:none;
+position:absolute;
+top:70px;
+right:0;
+background:black;
+width:200px;
+}
+
+nav ul{
+flex-direction:column;
+}
+
+nav ul li{
+margin:15px 0;
+text-align:center;
+}
+
+nav.active{
+display:block;
+}
+
+.menu-icon{
+display:block;
+}
+/* FLOATING CONTACT ICONS */
+
+.contact-icons{
+position:fixed;
+bottom:20px;
+right:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:1000;
+}
+
+.contact-icons a{
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+border-radius:50%;
+text-decoration:none;
+color:white;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.call{
+background:#007BFF;
+}
+
+.contact-icons a:hover{
+transform:scale(1.1);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="logo">DADRIS GRAPHICS</div>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="portfolio-hero">
+
+<h1>My Portfolio</h1>
+
+<p>Some of my recent creative projects</p>
+
+</section>
+
+<!-- PORTFOLIO PROJECTS -->
+
+<section class="portfolio">
+
+<div class="portfolio-container">
+
+<!-- PROJECT 1 -->
+
+<div class="project">
+
+<img src="images/social.jpeg">
+
+<div class="project-info">
+
+<h3>Social Media Poster</h3>
+
+<p>A modern promotional poster designed for social media marketing.</p>
+
+<button>View</button>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="project">
+
+<img src="images/sir.jpeg">
+
+<div class="project-info">
+
+<h3>Creative Branding Design</h3>
+
+<p>A creative visual design used for branding and promotional campaigns.</p>
+
+<button>View</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<div class="footer-logo">IDRIS</div>
+
+<p>Creative designer building modern visual experiences.</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div>
+    <!-- Floating Contact Icons -->
+
+<div class="contact-icons">
+
+<a href="https://wa.me/254717303361" target="_blank" class="whatsapp">
+💬
+</a>
+
+<a href="tel:+254717303361" class="call">
+📞
+</a>
+
+</div>
+
+<div>
+
+<h3>WhatsApp Us | Call Us</h3>
+
+<i class="fab fa-whatsapp">+245 717 303 361</i>
+
+
+</div>
+
+</div>
+
+<div class="bottom">
+
+© 2026 Idris Portfolio | All Rights Reserved
+
+</div>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
